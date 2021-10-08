@@ -5,7 +5,7 @@ function DayComponent({day}) {
 	const present = day.isCurrentDay ? 'today' : ''; 
 	//console.log(day);
 	return (
-		<div className={present}>
+		<div className={present} >
 			{day.value}
 		</div>
 	)

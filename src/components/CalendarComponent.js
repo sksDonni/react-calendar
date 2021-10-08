@@ -3,6 +3,7 @@ import {GetMonthChar} from './GetDateComponent'
 import DayComponent from './DayComponent'
 import WeekdaysComponent from './WeekdaysComponent'
 import HeaderComponent from './HeaderComponent'
+import EventsComponent from './EventsComponent'
 
 function CalendarComponent() {
 
@@ -13,18 +14,20 @@ function CalendarComponent() {
 		const currentDay = days.filter((day) => day.isCurrentDay === true)[0]
 		console.log(currentDay);
 		return (
-			<>
+			<div className="container">
 				<HeaderComponent currDay={currentDay} dateDisplay={dateDisplay} />
-				<div className='calendar-container'>
-					<WeekdaysComponent />
-					{days.map((day, index) => (
-						<DayComponent day={day} key={index} />
-					))}
+				<div className="middle-component">
+					<div className='calendar-container'>
+						<WeekdaysComponent />
+						{days.map((day, index) => (
+							<DayComponent day={day} key={index} />
+						))}
+					</div>
+					<div className="events-container">
+						<EventsComponent />
+					</div>
 				</div>
-				<div>
-
-				</div>
-			</>
+			</div>
 		)
 	}else
 	{

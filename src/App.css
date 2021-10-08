@@ -4,6 +4,17 @@
 
 .header{
 	text-align: center;
+	width: 50%;
+	margin-right: auto;
+}
+
+.container{
+	width: 80%;
+	margin: auto;
+}
+
+.middle-component{
+	display: flex;
 }
 
 .calendar-container{
@@ -27,4 +38,9 @@
 
 .today{
 	background-color: yellow;
+}
+
+.events-container{
+	width: 20%;
+	margin: auto;
 }

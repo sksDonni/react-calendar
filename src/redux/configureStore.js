@@ -3,12 +3,14 @@ import {Events} from './EventsReducer'
 import {Month} from './MonthsReducer'
 import thunk from "redux-thunk";
 import logger from "redux-logger";
+import {DateSelected} from './DateSelected'
 
 export const ConfigureStore = () => {
 	const store = createStore(
 		combineReducers({
 			events: Events,
-			month: Month
+			month: Month,
+			dateSelected: DateSelected,
 		}),
     	applyMiddleware(thunk, logger));
 
