@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import {GetMonthChar} from './GetDateComponent'
 import DayComponent from './DayComponent'
 import WeekdaysComponent from './WeekdaysComponent'

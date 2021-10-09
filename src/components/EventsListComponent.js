@@ -7,18 +7,22 @@ function EventsListComponent() {
 	const dispatch = useDispatch();
 	const dateSelected = useSelector((state) => state.dateSelected);
 	const events = useSelector((state) => state.events);
-	
+	const data = localStorage.getItem('profile')
+	const {_id} = JSON.parse(data).result
+
 	useEffect(() => {
 		console.log(dateSelected);
-		dispatch(getEventsByDate(dateSelected))
+		dispatch(getEventsByDate(dateSelected, _id))
 	}, [dateSelected])
 
 	if(events.length !== 0){
+		console.log(events);
+		const events = events.filter((e) => e.userId === _id)
+		console.log(events);
+		events = events.map(e => (<div>{e.eventName}</div>))
 		return(
 			<div>
-				{events.map((event) => (
-					<div>{event.eventName}</div>
-				))}
+				{events}
 			</div>
 			)
 		}

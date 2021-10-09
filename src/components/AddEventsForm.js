@@ -6,6 +6,7 @@ import {addNewEvent} from '../redux/ActionCreators'
 function AddEventsForm() {
 	const [eventName, setEventName] = useState('')
 	const dateSelected = useSelector((state) => state.dateSelected);
+	const userId = JSON.parse(localStorage.getItem('profile')).result._id
 	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
@@ -13,6 +14,7 @@ function AddEventsForm() {
 		const values = {
 			eventName,
 			dateSelected,
+			userId
 		}
 		console.log(values, dateSelected);
 		dispatch(addNewEvent(values, dateSelected));
