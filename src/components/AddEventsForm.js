@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as ActionTypes from '../redux/ActionTypes'
+import {addNewEvent} from '../redux/ActionCreators'
 
 function AddEventsForm() {
 	const [eventName, setEventName] = useState('')
@@ -13,7 +14,8 @@ function AddEventsForm() {
 			eventName,
 			dateSelected,
 		}
-		dispatch({type: ActionTypes.ADD_EVENT, payload: values})
+		console.log(values, dateSelected);
+		dispatch(addNewEvent(values, dateSelected));
 	}
 
 	return (

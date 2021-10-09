@@ -35,11 +35,11 @@ export const GetMonthChar = () => {
 			{
 				const dayString = `${year}-${month+1}-${i-numberOfEmptyDays}`;
 				//console.log(dayString);
-				const dayStringUpdated = new Date(dayString).toLocaleDateString();
+				console.log(dayString);
 				daysToBeSet.push({
 					value: i - numberOfEmptyDays,
 			        isCurrentDay: (i - numberOfEmptyDays === day) && (offset === 0),
-			        date: dayStringUpdated,
+			        date: dayString,
 				})
 			}
 			else

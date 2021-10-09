@@ -1,7 +1,11 @@
 import * as ActionTypes from './ActionTypes'
 
-const initialDate = new Date().toLocaleDateString();
-export const DateSelected = (state=initialDate, action) => {
+const initialDate = new Date();
+const day = initialDate.getDate()
+const month = initialDate.getMonth()
+const year = initialDate.getFullYear()
+const today = `${day}-${month}-${year}`;
+export const DateSelected = (state=today, action) => {
 	switch(action.type)
 	{
 		case ActionTypes.CHANGE_DATE:
