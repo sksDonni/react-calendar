@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {NavLink, useHistory, useLocation} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import decode from 'jwt-decode'
-import CalendarComponent from './CalendarComponent'
+import PrimaryComponent from './PrimaryComponent'
 import SecondaryComponent from './SecondaryComponent'
 
 function MainComponent() {
@@ -20,15 +20,14 @@ function MainComponent() {
 		const token = User?.token
 		if(token){
 			const decodedToken = decode(token)
-			console.log(decodedToken);
 		}
 		setUser(JSON.parse(localStorage.getItem('profile')))
 	}, [location])
 
 
 	return (
-		<div>
-			{User? <CalendarComponent /> : <SecondaryComponent />}
+		<div className="main-container">
+			{User? <PrimaryComponent /> : <SecondaryComponent />}
 		</div>
 	)
 }

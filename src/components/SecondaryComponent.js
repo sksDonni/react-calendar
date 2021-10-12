@@ -1,6 +1,6 @@
 import React from 'react'
-import LoginComponent from './LoginComponent'
-import RegisterComponent from  './RegisterComponent'
+import LoginComponent from './authComponents/LoginComponent'
+import RegisterComponent from  './authComponents/RegisterComponent'
 
 function SecondaryComponent() {
 	return (

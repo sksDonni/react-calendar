@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import * as ActionTypes from '../redux/ActionTypes'
-import {addNewEvent} from '../redux/ActionCreators'
+import * as ActionTypes from '../../redux/ActionTypes'
+import {addNewEvent} from '../../redux/ActionCreators'
 
 function AddEventsForm() {
 	const [eventName, setEventName] = useState('')

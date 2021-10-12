@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {loginUser} from '../redux/ActionCreators'
+import {loginUser} from '../../redux/ActionCreators'
 import {useHistory} from 'react-router-dom'
 
 

@@ -4,7 +4,6 @@ import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom'
 import {ConfigureStore} from './redux/configureStore'
 
-
 function App() {
   const store = ConfigureStore();
   return (

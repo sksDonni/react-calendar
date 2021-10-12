@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {getEventsByDate} from '../redux/ActionCreators'
+import {getEventsByDate} from '../../redux/ActionCreators'
 
 // Component to fetch event list for a particular day and display them.
 function EventsListComponent() {

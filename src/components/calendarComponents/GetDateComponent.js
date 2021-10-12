@@ -26,7 +26,7 @@ export const GetMonthChar = () => {
 		const firstDay = new Date(year, month, 1);
 		const monthSize = new Date(year, month+1, 0).getDate();
 		const numberOfEmptyDays = firstDay.getDay();
-		setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
+		setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'short' })} ${year}`)
 
 		let daysToBeSet = [];
 		for(var i=1; i <= numberOfEmptyDays + monthSize; i++)
@@ -45,7 +45,7 @@ export const GetMonthChar = () => {
 			else
 			{
 				daysToBeSet.push({
-					value: 'empty',
+					value: '',
 					isCurrentDay: false,
 					date: ''
 				})

@@ -1,10 +1,10 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import * as ActionTypes from '../redux/ActionTypes'
+import * as ActionTypes from '../../redux/ActionTypes'
 
 function DayComponent({day}) {
 	//console.log(day);
-	const present = day.isCurrentDay ? 'today' : ''; 
+	const present = day.isCurrentDay ? 'present' : ''; 
 	//console.log(day);
 	const dayValue = day.date
 	const dispatch = useDispatch();
