@@ -27,7 +27,7 @@ function MainComponent() {
 
 	return (
 		<div className="main-container">
-			{User? <PrimaryComponent /> : <SecondaryComponent />}
+			{User? <PrimaryComponent /> : history.push('/auth/login')}
 		</div>
 	)
 }

@@ -28,13 +28,22 @@ export const addEvent = async (req, res) => {
 }
 
 export const getEventsByDate = async (req, res) => {
-	const {date} = req.params;
-	const {userId} = req.body
-	console.log(req.body);
+	const {userId, date} = req.params;
+	console.log(req.params);
 	console.log(userId);
-	const data = await EventModel.find({'dateSelected': date})
+	const data = await EventModel.find({'dateSelected': date, 'userId':userId})
 	.then((data) => {res.status(201).json({data})})
 	.catch(err => 
         res.status(406).json({message: err.message})
     )
+}
+
+export const deleteEvent = async (req, res) => {
+	const {id} = req.params;
+	console.log(id);
+	const data = await EventModel.findOneAndRemove({'_id': id})
+	.then((data) => res.status(201).json({data}))
+	.catch((err) => 
+		res.status(406).json({message: err.message}));
+
 }

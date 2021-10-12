@@ -46,9 +46,20 @@ export const loginUser = (state, router) => async (dispatch) =>
 		const {data} = await api.loginUser(state)
 		console.log(data)
 		dispatch({type:ActionTypes.LOGIN, payload: data})
-		//router.push('/posts')
+		router.push('/events')
 	}catch(err)
 	{
 		console.log(err.message);
 	}
 }
+
+export const deleteEvent = (id) => async (dispatch) => {
+	try{
+		const {data} = await api.deleteEvent(id);
+		console.log(data);
+		dispatch({type: 'DELETE_EVENT', payload:id})
+	}catch(err)
+	{
+		console.log(err);
+	}
+} 

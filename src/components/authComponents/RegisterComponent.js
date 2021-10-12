@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {registerUser} from '../../redux/ActionCreators'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 
 
 function Register() {
@@ -22,31 +22,39 @@ function Register() {
 	}
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit} >
-				<div className="input-field">
-					<label htmlFor="name">Name</label>
-					<input type="text" id="name" onChange={(e) => setStateName(e.target.value)}/>
+		<div className="auth-container">
+			<h3>Create Account</h3>
+			<p> Please create an account to use the calendar </p>
+			<div className="main-login-container">
+				<div className="calendar-logo">
+					<img src="data:image/png;base64,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" alt=""/>
 				</div>
+				<div className="login-form">
+					<form onSubmit={handleSubmit} >
+						<div className="input-field">
+							<input type="text" id="name" placeholder="name" onChange={(e) => setStateName(e.target.value)}/>
+						</div>
 
-				<div className='input-field'>
-					<label htmlFor="email">Email</label>
-					<input type="text" id="email" onChange={(e) => setStateEmail(e.target.value)}/>
-				</div>
+						<div className='input-field'>
+							<input type="text" id="email" placeholder="email" onChange={(e) => setStateEmail(e.target.value)}/>
+						</div>
 
-				<div className='input-field'>
-					<label htmlFor="password">Password</label>
-					<input type="text" id="password" onChange={(e) => setStatePassword(e.target.value)}/>
-				</div>
+						<div className='input-field'>
+							<input type="password" id="password" placeholder="password" onChange={(e) => setStatePassword(e.target.value)}/>
+						</div>
 
-				<div className='input-field'>
-					<label htmlFor="password2">Confirm Password</label>
-					<input type="text" id="password2" onChange={(e) => setStatePassword2(e.target.value)}/>
+						<div className='input-field'>
+							<input type="text" id="password2" placeholder="confirm password" onChange={(e) => setStatePassword2(e.target.value)}/>
+						</div>
+						<div className='input-field'>
+							<button>Submit</button>
+						</div>
+
+						<p>Already have an account? <Link to='/auth/login'> Login </Link></p>
+					</form>
 				</div>
-				<div className='input-field'>
-					<button>Submit</button>
-				</div>
-			</form>
+			</div>
+			
 		</div>
 	)
 }

@@ -11,7 +11,6 @@ function EventsComponent() {
 		<div className='events-container'>
 			<SelectedDayComponent />
 			<EventsListComponent />
-			<AddEventsForm />
 		</div>
 	)
 }

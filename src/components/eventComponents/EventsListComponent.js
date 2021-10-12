@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {getEventsByDate} from '../../redux/ActionCreators'
+import EventsFormComponent from './EventsFormComponent'
+import EventLayout from './EventLayout'
 
 // Component to fetch event list for a particular day and display them.
 function EventsListComponent() {
@@ -17,19 +19,31 @@ function EventsListComponent() {
 
 	if(events.length !== 0){
 		console.log(events);
-		const events = events.filter((e) => e.userId === _id)
-		console.log(events);
-		events = events.map(e => (<div>{e.eventName}</div>))
+		const newevents = events.filter((e) => e.userId === _id)
+		console.log(newevents);
+		const updatedevents = events.map(e => (<div><EventLayout event={e} /></div>))
 		return(
-			<div>
-				{events}
+		<>
+			<div className="eventlist-container">
+				{updatedevents}
 			</div>
+			<div>
+				<EventsFormComponent />
+			</div>
+		</>
 			)
 		}
 		else
 		{
 			return(
-				<div>nothing</div>
+			<>
+				<div className="no-events">
+					No events found.<br/>
+				</div>
+				<div>
+					<EventsFormComponent />
+				</div>
+			</>
 		)
 	}
 }

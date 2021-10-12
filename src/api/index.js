@@ -15,8 +15,8 @@ API.interceptors.request.use((req) => {
 })
 
 export const addEvent = (event, date) => API.post(`${eventsURL}/${date}`, event)
-export const getEventsByDate = (date, userId) => API.get(`${eventsURL}/${date}`, userId);
-
+export const getEventsByDate = (date, userId) => API.get(`${eventsURL}/${userId}/${date}`,);
+export const deleteEvent = (id) => API.delete(`${eventsURL}/${id}`);
 
 export const registerUser = (data) => API.post(`${authURL}/register`, data)
 export const loginUser = (data) => API.post(`${authURL}/login`, data)

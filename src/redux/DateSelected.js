@@ -2,9 +2,9 @@ import * as ActionTypes from './ActionTypes'
 
 const initialDate = new Date();
 const day = initialDate.getDate()
-const month = initialDate.getMonth()
+const month = initialDate.getMonth()+1
 const year = initialDate.getFullYear()
-const today = `${day}-${month}-${year}`;
+const today = `${year}-${month}-${day}`;
 export const DateSelected = (state=today, action) => {
 	switch(action.type)
 	{

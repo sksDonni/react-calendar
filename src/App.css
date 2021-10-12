@@ -6,24 +6,22 @@ html, body{
 	height: 100%;
 	margin: 0%;
 	background-color: lightcyan;
-	background-image: url("");
+	background-image: url("https://img.artpal.com/235081/12-20-7-20-2-45-21m.jpg");
 	background-size: cover;
+	overflow-y: auto;
 }
 
-.App{
-
-
-}
 
 .primary-container{
 	display: flex;
 	position: relative;
 	align-items: flex-start;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 1);
 	width: 60%;
 	margin: auto;
 	top: 100px;
 	padding: 10px;
+	overflow-y: scroll;
 }
 
 @media only screen and (max-width: 600px) {
